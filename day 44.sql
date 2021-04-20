@@ -121,3 +121,83 @@ FROM books;
 SELECT
     SUBSTRING(REPLACE(title, 'e', '3'), 1, 10) AS 'weird string'
 FROM books;
+
+SELECT author_lname, CHAR_LENGTH(author_lname) As 'length' FROM books;
+
+SELECT author_fname, CHAR_LENGTH(author_fname) AS 'length' FROM books;
+
+
+SELECT CONCAT(author_lname, ' is ', CHAR_LENGTH(author_lname), ' ', 'charaacters long') FROM books;
+
+SELECT CONCAT(author_fname, ' is ', CHAR_LENGTH(author_fname), ' ', 'CHARACTERS LONGS') FROM books;
+
+
+SELECT UPPER(' hello world');
+
+SELECT UPPER(title) AS 'SHORT TITLE' FROM books;
+
+SELECT LOWER(author_fname) AS 'short_author' FROM books;
+
+SELECT UPPER( REVERSE('Why does cat look at me with such hatred')); 
+
+SELECT
+replace(
+concat('I', ' ', ' like' , ' ', 'cats'),
+' ',
+'-'
+);
+
+SELECT replace(title, ' ', '-') FROM books;
+
+
+INSERT INTO books
+    (title, author_fname, author_lname, released_year, stock_quantity, pages)
+    VALUES ('10% Happier', 'Dan', 'Harris', 2014, 29, 256), 
+           ('fake_book', 'Freida', 'Harris', 2001, 287, 428),
+           ('Lincoln In The Bardo', 'George', 'Saunders', 2017, 1000, 367);
+ 
+ 
+SELECT distinct author_lname FROM books;
+
+SELECT released_year FROM books;
+
+SELECT distinct released_year AS 'new' FROM  books;
+
+SELECT author_fname, author_lname FROM books;
+
+SELECT author_fname, author_lname FROM books;
+ 
+SELECT DISTINCT CONCAT(author_fname,' ', author_lname) FROM books;
+ 
+SELECT DISTINCT author_fname, author_lname FROM books;
+
+SELECT author_lname FROM books ORDER BY author_lname;
+
+SELECT title FROM books ORDER BY title;
+
+select title FROM books ORDER BY title DESC;
+
+SELECT released_year FROM books ORDER BY released_year;
+SELECT released_year FROM books ORDER BY released_year desc;
+
+SELECT title, author_fname, author_lname 
+FROM books ORDER BY 2;
+ 
+SELECT title, author_fname, author_lname 
+FROM books ORDER BY 3;
+ 
+SELECT title, author_fname, author_lname 
+FROM books ORDER BY 1;
+ 
+SELECT title, author_fname, author_lname 
+FROM books ORDER BY 1 DESC;
+ 
+SELECT author_lname, title
+FROM books ORDER BY 2;
+
+
+SELECT author_fname, author_lname FROM books ORDER BY author_lname, author_fname;
+
+SELECT title from books LIMIT 3;
+
+SELECT 
