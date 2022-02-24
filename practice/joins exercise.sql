@@ -30,8 +30,11 @@ select * from students;
 select * from papers;
 
 select first_name, title, grade 
-from students left join papers 
-on students.id = papers.student_id;
+from students 
+left join papers 
+on students.id = papers.student_id
+where grade > 60
+order by grade desc;
 
 select first_name, title, grade 
 from students right join papers 
