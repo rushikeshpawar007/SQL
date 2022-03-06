@@ -3,7 +3,7 @@ use faang;
 select * from warehouse;
 
 
-
+-- common table expression
 WITH WH as
 		(select * from warehouse order by event_datetime desc),
 	days as
@@ -69,6 +69,7 @@ inv_365_days_final as
         end as daysold_365
         from inv_365_days
         cross join days d)
+
 
 
 select * from inv_365_days_final;
