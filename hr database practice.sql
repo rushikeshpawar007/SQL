@@ -24,7 +24,7 @@ on d.location_id = l.location_id
 where manager_id is not null
 and country_id <> 'US';
 
-
+rudirkdhd v
 
 -- 4
 
